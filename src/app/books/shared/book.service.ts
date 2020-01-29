@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IBook } from './ibook';
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,12 @@ export class BookService {
       subtitle: 'A Modern Introduction to Programming'
     }
   ];
-  constructor() {}
-  getBooks(): IBook[] {
+  url = 'http://localhost:4730/books/';
+  constructor(private http: HttpClient) {}
+  getBooksSync(): IBook[] {
     return this.books;
+  }
+  getBooks(): Observable<IBook[]> {
+    return this.http.get<IBook[]>(this.url);
   }
 }
