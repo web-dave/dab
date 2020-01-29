@@ -14,5 +14,8 @@
     <td>{{ i + 1 }}</td>
     <td>{{ book.title }}</td>
     <td>{{ book.subtitle }}</td>
+    <td>
+      <a [routerLink]="[book.isbn]">{{ book.isbn }}</a>
+    </td>
   </tr>
 </table>
