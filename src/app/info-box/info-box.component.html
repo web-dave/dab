@@ -1,5 +1,5 @@
 <p>info-box works!</p>
 <button (click)="isHidden = !isHidden">
-  {{ !isHidden ? 'Come back!' : 'Go away!' }}
+  {{ isHidden ? 'Come back!' : 'Go away!' }}
 </button>
 <h1 [hidden]="isHidden">Moin</h1>
