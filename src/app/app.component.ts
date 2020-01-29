@@ -13,4 +13,8 @@ export class AppComponent {
       this.i++;
     }, 2500);
   }
+
+  oho(e) {
+    console.log(e);
+  }
 }

@@ -1,0 +1,18 @@
+<h3>Book List</h3>
+<table>
+  <tr
+    *ngFor="
+      let book of books;
+      let even = even;
+      let odd = odd;
+      let first = first;
+      let last = last;
+      let i = index
+    "
+    [ngClass]="{ first: first, even: even, odd: odd }"
+  >
+    <td>{{ i + 1 }}</td>
+    <td>{{ book.title }}</td>
+    <td>{{ book.subtitle }}</td>
+  </tr>
+</table>
