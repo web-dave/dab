@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dab';
+  title = 'Moin DAB';
+  i = 0;
+  constructor() {
+    setTimeout(() => {
+      this.i++;
+    }, 2500);
+  }
 }
