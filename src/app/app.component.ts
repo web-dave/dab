@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Subject, interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  counter$ = interval(1500).pipe(map(n => 1));
   title = 'Moin DAB';
   i = 0;
   constructor() {
