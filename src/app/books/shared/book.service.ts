@@ -19,4 +19,10 @@ export class BookService {
   updateBook(book: IBook): Observable<IBook> {
     return this.http.put<IBook>(this.url + book.isbn, book);
   }
+  createBook(book: IBook): Observable<IBook> {
+    return this.http.post<IBook>(this.url, book);
+  }
+  deleteBook(isbn: string): Observable<string> {
+    return this.http.delete<string>(this.url + isbn);
+  }
 }

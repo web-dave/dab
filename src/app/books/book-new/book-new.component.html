@@ -1,0 +1,36 @@
+<h3>Create Book</h3>
+<div>
+  <form [formGroup]="bookForm" (ngSubmit)="save()">
+    <label for="title">Title:</label>
+    <input type="text" formControlName="title" />
+    <span
+      [hidden]="
+        !bookForm.get('title').hasError('required') ||
+        bookForm.get('title').pristine
+      "
+      >😱</span
+    >
+    <label for="isbn">Subtitle:</label>
+    <input type="text" formControlName="isbn" />
+    <span
+      [hidden]="
+        !bookForm.get('isbn').hasError('required') ||
+        bookForm.get('isbn').pristine
+      "
+      >🥴</span
+    >
+    <label for="abstract">Abstract:</label>
+    <textarea type="text" formControlName="abstract"></textarea>
+    <span
+      [hidden]="
+        !bookForm.get('abstract').hasError('required') ||
+        bookForm.get('abstract').pristine
+      "
+      >🕳️</span
+    >
+    <br />
+    <button type="submit" [disabled]="!bookForm.valid">💾</button>
+    <span *ngIf="save$ | async">✔️</span>
+  </form>
+  <button [routerLink]="['..']">💨</button>
+</div>

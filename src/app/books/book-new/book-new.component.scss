@@ -1,0 +1,12 @@
+form {
+  label,
+  input,
+  textarea {
+    display: table-row;
+    width: 70vw;
+    line-height: 3em;
+    &.ng-invalid.ng-dirty {
+      border: solid gray 3px;
+    }
+  }
+}
