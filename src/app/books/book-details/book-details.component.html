@@ -1,10 +1,10 @@
 <h3>Book Detail</h3>
 <button [routerLink]="['..']">back</button>
 <button [routerLink]="['edit']">Edit</button>
-<pre>{{ book$ | async | json }}</pre>
+<!-- <pre>{{ book$ | async | json }}</pre> -->
 
 <div *ngIf="book$ | async as book">
   <h4>{{ book.title }}</h4>
+  <p>{{ book.abstract }}</p>
   <img [src]="book.cover" alt="" />
-  <strong>{{ book.isbn }}</strong>
 </div>

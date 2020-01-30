@@ -19,6 +19,10 @@ export class StayhereGuard implements CanDeactivate<BookDetailsComponent> {
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot
   ): boolean {
-    return confirm('Please don`t go!');
+    console.log(currentState.url, nextState.url);
+    if (nextState.url === currentState.url + '/edit') {
+      return confirm('Sure you wanna Edit!');
+    }
+    return true;
   }
 }
