@@ -5,6 +5,7 @@
 
 <div *ngIf="book$ | async as book">
   <h4>{{ book.title }}</h4>
-  <p>{{ book.abstract }}</p>
+  <p>{{ addEinHorn(book.abstract) }}</p>
+  <p>{{ book.abstract | einhorn: einHorn }}</p>
   <img [src]="book.cover" alt="" />
 </div>

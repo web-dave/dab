@@ -9,6 +9,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookEditComponent } from './book-edit/book-edit.component';
 import { BookNewComponent } from './book-new/book-new.component';
+import { EinhornPipe } from './shared/einhorn.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BookNewComponent } from './book-new/book-new.component';
     BookListComponent,
     BookDetailsComponent,
     BookEditComponent,
-    BookNewComponent
+    BookNewComponent,
+    EinhornPipe
   ],
   exports: [BooksComponent, BookListComponent],
   imports: [

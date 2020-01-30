@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class BookDetailsComponent implements OnInit {
   book$: Observable<IBook>;
+  einHorn = '🦄';
   constructor(private route: ActivatedRoute, private service: BookService) {}
 
   ngOnInit() {
@@ -20,8 +21,15 @@ export class BookDetailsComponent implements OnInit {
     this.book$ = this.route.params.pipe(
       mergeMap(params => this.service.getBook(params.isbn))
     );
+    setInterval(() => {
+      this.einHorn = '🦄';
+    }, 1500);
     // this.route.params.subscribe(params => {
     //   this.service.getBook(params.isbn).subscribe(b => (this.book = b));
     // });
+  }
+  addEinHorn(text: string, replacer = this.einHorn) {
+    console.log('Methode', replacer);
+    return text.replace(' ', replacer);
   }
 }

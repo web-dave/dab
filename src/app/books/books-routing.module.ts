@@ -26,6 +26,11 @@ const routes: Routes = [
         canDeactivate: [StayhereGuard]
       },
       {
+        path: ':author',
+        component: BookDetailsComponent,
+        canDeactivate: [StayhereGuard]
+      },
+      {
         path: ':isbn/edit',
         component: BookEditComponent
       }
