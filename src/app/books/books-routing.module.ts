@@ -4,6 +4,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BooksComponent } from './books.component';
 import { StayhereGuard } from './shared/stayhere.guard';
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
         path: ':isbn',
         component: BookDetailsComponent,
         canDeactivate: [StayhereGuard]
+      },
+      {
+        path: ':isbn/edit',
+        component: BookEditComponent
       }
     ]
   }
