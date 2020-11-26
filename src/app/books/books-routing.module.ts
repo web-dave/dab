@@ -14,32 +14,38 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: BookListComponent
+        component: BookListComponent,
+        data: {
+          animation: 'List',
+        },
       },
       {
         path: 'new',
-        component: BookNewComponent
+        component: BookNewComponent,
       },
       {
         path: ':isbn',
         component: BookDetailsComponent,
-        canDeactivate: [StayhereGuard]
+        canDeactivate: [StayhereGuard],
+        data: {
+          animation: 'Details',
+        },
       },
       {
         path: ':author',
         component: BookDetailsComponent,
-        canDeactivate: [StayhereGuard]
+        canDeactivate: [StayhereGuard],
       },
       {
         path: ':isbn/edit',
-        component: BookEditComponent
-      }
-    ]
-  }
+        component: BookEditComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class BooksRoutingModule {}
