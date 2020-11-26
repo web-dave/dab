@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +11,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
 import { BookNewComponent } from './book-new/book-new.component';
 import { EinhornPipe } from './shared/einhorn.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { createCustomElement } from '@angular/elements';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BookEditComponent,
     BookNewComponent,
     EinhornPipe,
+  ],
+  entryComponents: [
+    BooksComponent,
+    BookListComponent,
+    BookDetailsComponent,
+    BookEditComponent,
+    BookNewComponent,
   ],
   exports: [BooksComponent, BookListComponent],
   imports: [

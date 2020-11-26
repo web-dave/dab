@@ -9,7 +9,7 @@ import { BookNewComponent } from './book-new/book-new.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'books',
     component: BooksComponent,
     children: [
       {
@@ -42,10 +42,15 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: '',
+    redirectTo: '/books',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class BooksRoutingModule {}

@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { fadeAnimation } from '../app.component';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss'],
-  animations: [fadeAnimation],
 })
 export class BooksComponent implements OnInit {
-  prepareRoute(outlet: RouterOutlet) {
-    return (
-      outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation
-    );
+  @Input() name: string;
+  @Output() highFive = new EventEmitter<string>();
+  constructor(router: Router) {
+    router.initialNavigation();
   }
-  constructor() {}
 
   ngOnInit() {}
+  hi() {
+    this.highFive.emit('Booyaaaaa ' + this.name);
+  }
 }
