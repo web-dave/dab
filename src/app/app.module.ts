@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { createCustomElement } from '@angular/elements';
 import { BooksModule } from './books/books.module';
 import { BooksComponent } from './books/books.component';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BooksComponent } from './books/books.component';
     InfoBoxComponent,
     MouseCursorComponent,
     TitleBoxComponent,
+    AppComponent,
   ],
   imports: [
     BrowserModule,
